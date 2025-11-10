@@ -3,7 +3,7 @@ import {navLinks} from '../constants/index.js'
 const Navbar = () => {
   return (
     <header>
-      <nav>
+      <nav className="lg:px-8">
         <img src="/logo.svg" alt="apple_logo" />
         <ul>
           {navLinks.map(({ lable }) => (
