@@ -4,30 +4,31 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 
 const Showcase = () => {
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
 
-  const isTablet = useMediaQuery({query: '(max-width: 1024px)'})
+  useGSAP(() => {
+    if (!isTablet) {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#showcase",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+          pin: true,
+        },
+      });
 
-  useGSAP(()=>{
-      if(!isTablet){
-         const timeline = gsap.timeline({
-             scrollTrigger: {
-                 trigger: '#showcase',
-                 start: 'top top',
-                 end: 'bottom top',
-                 scrub: true,
-                 pin: true
-             }
-         })
-
-         timeline.to('.mask img',{
-            transform: 'scale(1.1)'
-         }).to('.content',{
-            opacity: 1,
-            y: 0,
-            ease: 'power1.in'
-         })
-      }
-  },[isTablet])
+      timeline
+        .to(".mask img", {
+          transform: "scale(1.1)",
+        })
+        .to(".content", {
+          opacity: 1,
+          y: 0,
+          ease: "power1.in",
+        });
+    }
+  }, [isTablet]);
 
   return (
     <section id="showcase">
@@ -50,18 +51,15 @@ const Showcase = () => {
                 .M4 powers
               </p>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
-                labore optio dolore est unde aliquam recusandae, aspernatur odit
-                blanditiis officiis molestias nisi excepturi totam numquam fugit
-                saepe ratione consequuntur et.
+                It drives Apple Intelligence on iPad Pro, so you can write,
+                create, and accomplish more with ease. All in a design that’s
+                unbelievably thin, light, and powerful.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                molestias pariatur fugiat quidem ipsam ea, hic accusantium!
-                Ipsum, officia obcaecati, assumenda molestias quos incidunt aut
-                tempora iusto, iure deserunt mollitia voluptatum corporis libero
-                pariatur facilis nihil? Hic vitae ratione tempore laborum amet
-                distinctio nulla porro nemo! Et perferendis delectus porro!
+                A brand-new display engine delivers breathtaking precision,
+                color accuracy, and brightness. And a next-gen GPU with
+                hardware-accelerated ray tracing brings console-level graphics
+                to your fingertips.
               </p>
               <p className="text-primary">
                 Learn more about Apple Intelligence
