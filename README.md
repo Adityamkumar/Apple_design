@@ -26,7 +26,7 @@ A stunning, modern Apple-inspired product showcase website built with React, Thr
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Adityamkumar/Apple_design.git
 cd apple_design
 ```
 
@@ -51,7 +51,7 @@ npm run dev
 
 ## 📁 Project Structure
 
-```
+```text
 apple_design/
 ├── public/             # Static assets (images, videos, models)
 │   ├── models/        # 3D models
