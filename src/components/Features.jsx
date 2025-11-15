@@ -106,7 +106,6 @@ const Features = () => {
       </Canvas>
 
       <div className="absolute inset-0">
-//Loading.
         {features.map((feature, index) => (
           <div className={clsx("box", `box${index + 1}`, feature.styles)}>
             <img src={feature.icon} alt={feature.highlight}/>
